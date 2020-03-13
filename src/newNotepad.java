@@ -16,7 +16,7 @@ public class newNotepad {
 
 
     public static void main(String[] args) {
-    frame = new JFrame("Exempel");
+    frame = new JFrame("New Notepad");
     panel = new JPanel();
     text = new JTextArea(20, 20);
     button = new JButton("Clear");
@@ -45,13 +45,15 @@ public class newNotepad {
         }
     });
 
+
+
         Dimension dim = new Dimension(WIDTH, HEIGHT);
+
         frame.setPreferredSize(dim);
         frame.pack();
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame
+        frame.setVisible(true);
     }
 }
