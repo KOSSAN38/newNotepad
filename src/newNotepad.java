@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class newNotepad {
     static int WIDTH = 800;
@@ -15,13 +18,25 @@ public class newNotepad {
     static JMenuItem menuItem;
 
 
+
     public static void main(String[] args) {
     frame = new JFrame("New Notepad");
     panel = new JPanel();
     text = new JTextArea(20, 20);
     button = new JButton("Clear");
+        String string = "help";
 
-    menuBar = new JMenuBar();
+        try {
+            BufferedWriter writer = new BufferedWriter( new FileWriter(".\\test.txt"));
+        writer.write(string);
+
+        writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        menuBar = new JMenuBar();
     menu = new JMenu("Helo");
     menuItem = new JMenuItem("AAA");
 
